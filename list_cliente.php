@@ -21,12 +21,16 @@ $dato = array_reverse($dato);
     <!--boo-->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title></title>
 </head>
 <body>
 <?php echo $menu; ?>
     <div class="container fondo">
         <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-dark">Lista de clientes</h1>
+            </div>
             <?php foreach($dato as $key => $value):?>
             <div class="col-md-12">
                 <div class="card text-center ">
@@ -49,7 +53,7 @@ $dato = array_reverse($dato);
 
                             <li class="list-group-item">
                                 <div class="p-1"><?php echo $value_2['marca'].' | Patente: '.$value_2['patente']; ?></div>
-                                <a href="mo_cliente.php?c=<?php echo $value['correo']; ?>" class="btn btn-primary text-right">Ver Historial</a>
+                                <a href="historial.php?p=<?php echo $value_2['patente']; ?>" class="btn btn-primary text-right">Ver Historial</a>
                             </li>
 
                     <?php endforeach;?>

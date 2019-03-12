@@ -31,13 +31,17 @@ if ($data != 0){
     <!--boo-->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title></title>
 </head>
 <body>
 <?php echo $menu; ?>
 
-<div class="container">
+<div class="container fondo">
     <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-dark">Lista de vehiculos</h1>
+        </div>
 
         <?php foreach ($data as $key => $value):?>
         <div class="col-md-12">
@@ -55,7 +59,7 @@ if ($data != 0){
         <div class="card-body text-center">
             <h5 class="card-title"><?php echo $value['marca'];?></h5>
             <p class="card-text"><?php echo 'Modelo: '.$value['modelo'].' Cilindrada: '.$value['CILIN'].' Patente: '.$value['patente'];?></p>
-            <a href="#" class="btn btn-primary">Ver historia</a>
+            <a href="historial.php?p=<?php echo $value['patente'];?>" class="btn btn-primary">Ver historia</a>
             <a href="mo_vehiculo.php?p=<?php echo $value['patente'];?>" class="btn btn-danger">Modificar</a>
         </div>
         </div>

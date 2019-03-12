@@ -9,7 +9,7 @@ mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
 if (isset($_REQUEST['id'])) {
-    $patente = strtolower($_REQUEST['patente']);
+    $patente = trim(mb_strtolower($_REQUEST['patente']));
     $out = new select();
 
     if($patente == $out->compru_auto($patente)[0][0]){
@@ -20,19 +20,19 @@ if (isset($_REQUEST['id'])) {
     $idv = $out->compru_informe($folio);
 
 
-    if ($folio != $idv[0][0]) {
+    if ($folio != $idv[0]['id']) {
 
 
-        $email = mb_strtolower($_REQUEST['correo'],'UTF-8');
+        $email = trim(mb_strtolower($_REQUEST['correo'],'UTF-8'));
         $FECHA_RECEPCIoN = $_REQUEST['FECHA_RECEPCIoN'];
         $HORA_RECEPCIoN = $_REQUEST['HORA_RECEPCIoN'];
         $KILOMETRAJE = $_REQUEST['KILOMETRAJE'];
         $PRoXIMA_MANTENCIoN = $_REQUEST['PRoXIMA_MANTENCIoN'];
         $FECHA_ENTREGA = $_REQUEST['FECHA_ENTREGA'];
         $HORA_ENTREGA = $_REQUEST['HORA_ENTREGA'];
-        $DIAGNoSTICO = mb_strtolower($_REQUEST['DIAGNoSTICO'],'UTF-8');
-        $DETALLE = mb_strtolower($_REQUEST['DETALLE'],'UTF-8');
-        $nota = mb_strtolower($_REQUEST['nota'],'UTF-8');
+        $DIAGNoSTICO = trim(mb_strtolower($_REQUEST['DIAGNoSTICO'],'UTF-8'));
+        $DETALLE = trim(mb_strtolower($_REQUEST['DETALLE'],'UTF-8'));
+        $nota = trim(mb_strtolower($_REQUEST['nota'],'UTF-8'));
 
         $in = new insertar();
         $in->informe($folio, $patente, $email, $FECHA_RECEPCIoN, $HORA_RECEPCIoN, $KILOMETRAJE, $PRoXIMA_MANTENCIoN,  $FECHA_ENTREGA, $HORA_ENTREGA, $DIAGNoSTICO, $DETALLE, $nota);

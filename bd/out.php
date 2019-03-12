@@ -5,7 +5,7 @@ class select{
     function compru_informe ($folio){
         include "ce/cer.php";
 
-        $sql ="select id from informe WHERE id = '$folio'";
+        $sql ="select id, patente from informe WHERE id = '$folio'";
         $smt=$conn->prepare($sql);
         $smt->execute();
         $resultado= $smt->fetchall();
@@ -162,6 +162,26 @@ class select{
         }else {
             return $resultado;
         }
+    }
+
+    function buscar_info_patente($patente){
+        include "ce/cer.php";
+
+        $sql ="select * from informe WHERE patente = '$patente'";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+
+
+
     }
 
 

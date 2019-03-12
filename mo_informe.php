@@ -23,21 +23,21 @@ $error = 0;
 if (isset($_REQUEST['patente'])) {
     $folio = $_REQUEST['id'];
     if ($folio == $out->compru_informe($folio)[0][0]) {
-        $patente = strtolower($_REQUEST['patente']);
+        $patente = trim(mb_strtolower($_REQUEST['patente']));
 
         if ($patente == $out->compru_auto($patente)[0][0]) {
 
 
-        $email = mb_strtolower($_REQUEST['correo'], 'UTF-8');
+        $email = trim(mb_strtolower($_REQUEST['correo'], 'UTF-8'));
         $FECHA_RECEPCIoN = $_REQUEST['FECHA_RECEPCIoN'];
         $HORA_RECEPCIoN = $_REQUEST['HORA_RECEPCIoN'];
         $KILOMETRAJE = $_REQUEST['KILOMETRAJE'];
         $PRoXIMA_MANTENCIoN = $_REQUEST['PRoXIMA_MANTENCIoN'];
         $FECHA_ENTREGA = $_REQUEST['FECHA_ENTREGA'];
         $HORA_ENTREGA = $_REQUEST['HORA_ENTREGA'];
-        $DIAGNoSTICO = mb_strtolower($_REQUEST['DIAGNoSTICO'], 'UTF-8');
-        $DETALLE = mb_strtolower($_REQUEST['DETALLE'], 'UTF-8');
-        $nota = mb_strtolower($_REQUEST['nota'], 'UTF-8');
+        $DIAGNoSTICO = trim(mb_strtolower($_REQUEST['DIAGNoSTICO'], 'UTF-8'));
+        $DETALLE = trim(mb_strtolower($_REQUEST['DETALLE'], 'UTF-8'));
+        $nota = trim(mb_strtolower($_REQUEST['nota'], 'UTF-8'));
 
         $up = new update();
         $up->mo_informe($folio, $patente, $email, $FECHA_RECEPCIoN, $HORA_RECEPCIoN, $KILOMETRAJE, $PRoXIMA_MANTENCIoN, $FECHA_ENTREGA, $HORA_ENTREGA, $DIAGNoSTICO, $DETALLE, $nota);
@@ -138,8 +138,27 @@ if (isset($_REQUEST['patente'])) {
 
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-4"></div><div class="col-md-4">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Modificar</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
+                    Modificar
+                </button>
             </div><div class="col-md-4"></div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Esta seguro de modificcar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-danger">Modificar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 

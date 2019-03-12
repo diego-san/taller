@@ -23,16 +23,16 @@ if(isset($_GET['p'])){
 
 if(isset($_REQUEST['patente'])) {
 
-        $patente = $_REQUEST['patente'];
+        $patente = trim(mb_strtolower($_REQUEST['patente']));
 
     if ($dato[0]['patente']  == $out->compru_auto($dato[0]['patente'] )[0][0]) {
 
-        $correo = strtolower($_REQUEST['correo']);
+        $correo = trim(strtolower($_REQUEST['correo']));
         if ($correo==$out->compru_clinete($correo)[0][0]) {
-            $marca = strtolower($_REQUEST['marca']);
-            $modelo = strtolower($_REQUEST['modelo']);
-            $cili = strtolower($_REQUEST['cili']);
-            $ano = strtolower($_REQUEST['ano']);
+            $marca = trim(strtolower($_REQUEST['marca']));
+            $modelo = trim(strtolower($_REQUEST['modelo']));
+            $cili = trim(strtolower($_REQUEST['cili']));
+            $ano = trim(strtolower($_REQUEST['ano']));
 
             $modi = new update();
 
@@ -68,6 +68,7 @@ if(isset($_REQUEST['patente'])) {
     <!--boo-->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title></title>
 </head>
 <body>
@@ -103,8 +104,26 @@ if(isset($_REQUEST['patente'])) {
 
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-4"></div><div class="col-md-4">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Modificar</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
+                    Modificar
+                </button>
             </div><div class="col-md-4"></div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Esta seguro de modificcar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-danger">Modificar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 

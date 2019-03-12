@@ -6,16 +6,16 @@ include "bd/out.php";
 $error = 0;
 
 if (isset($_REQUEST['patente'])) {
-    $correo = strtolower($_REQUEST['correo']);
+    $correo = trim(mb_strtolower($_REQUEST['correo']));
     $out = new select();
 
     if($correo== $out->compru_clinete($correo)[0][0]) {
-        $patente = strtolower($_REQUEST['patente']);
+        $patente = trim(mb_strtolower($_REQUEST['patente']));
         if ($patente!= $out->compru_auto($patente)[0][0]) {
-            $marca = strtolower($_REQUEST['marca']);
-            $modelo = strtolower($_REQUEST['modelo']);
-            $cili = strtolower($_REQUEST['cili']);
-            $ano = strtolower($_REQUEST['ano']);
+            $marca = trim(mb_strtolower($_REQUEST['marca']));
+            $modelo = trim(mb_strtolower($_REQUEST['modelo']));
+            $cili = trim(mb_strtolower($_REQUEST['cili']));
+            $ano = trim(mb_strtolower($_REQUEST['ano']));
 
             $in = new insertar();
             $in->in_auto($patente, $marca, $modelo, $cili, $ano, $correo);

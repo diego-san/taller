@@ -32,7 +32,7 @@ $menu = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="list_vehiculo.php">Ver lista de vehiculos</a>
                     <a class="dropdown-item" href="list_cliente.php">Ver lista de clientes</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="list_informe.php">Ver Informe</a>
                 </div>
             </li>
         </ul>

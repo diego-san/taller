@@ -6,14 +6,14 @@ include "bd/out.php";
 $error= 0;
 
 if (isset($_REQUEST['nombre'])) {
-    $correo = strtolower($_REQUEST['correo']);
+    $correo = trim(strtolower($_REQUEST['correo']));
     $out =   new select();
 
     if ($correo != $out->compru_clinete($correo)[0][0]) {
 
-        $nombre = strtolower($_REQUEST['nombre']);
-        $apellido = strtolower($_REQUEST['ap']);
-        $tele = $_REQUEST['tele'];
+        $nombre = trim(strtolower($_REQUEST['nombre']));
+        $apellido = trim(strtolower($_REQUEST['ap']));
+        $tele = trim($_REQUEST['tele']);
 
 
         $in = new insertar();

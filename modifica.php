@@ -8,17 +8,17 @@ if(isset($_GET['e'])){
 
 if (isset($_REQUEST['id'])){
 
-    header("Location:mo_informe.php?f=".$_REQUEST['id']);
+    header("Location:mo_informe.php?f=".trim(mb_strtolower($_REQUEST['id'])));
 }
 
 if (isset($_REQUEST['patente'])){
 
-    header("Location:mo_vehiculo.php?p=".$_REQUEST['patente']);
+    header("Location:mo_vehiculo.php?p=".trim(mb_strtolower($_REQUEST['patente'])));
 }
 
 if (isset($_REQUEST['correo'])){
 
-    header("Location:mo_cliente.php?c=".$_REQUEST['correo']);
+    header("Location:mo_cliente.php?c=".trim(mb_strtolower($_REQUEST['correo'])));
 }
 
 
@@ -34,6 +34,7 @@ if (isset($_REQUEST['correo'])){
     <!--boo-->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title>Modificar datos</title>
 </head>
 <body>
