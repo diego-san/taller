@@ -29,8 +29,8 @@ if(isset($_REQUEST['patente'])) {
 
         $correo = trim(strtolower($_REQUEST['correo']));
         if ($correo==$out->compru_clinete($correo)[0][0]) {
-            $marca = trim(strtolower($_REQUEST['marca']));
-            $modelo = trim(strtolower($_REQUEST['modelo']));
+            $marca = trim($_REQUEST['marca']);
+            $modelo = trim($_REQUEST['modelo']);
             $cili = trim(strtolower($_REQUEST['cili']));
             $ano = trim(strtolower($_REQUEST['ano']));
 

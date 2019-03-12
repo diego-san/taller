@@ -11,8 +11,8 @@ if (isset($_REQUEST['nombre'])) {
 
     if ($correo != $out->compru_clinete($correo)[0][0]) {
 
-        $nombre = trim(strtolower($_REQUEST['nombre']));
-        $apellido = trim(strtolower($_REQUEST['ap']));
+        $nombre = trim($_REQUEST['nombre']);
+        $apellido = trim($_REQUEST['ap']);
         $tele = trim($_REQUEST['tele']);
 
 

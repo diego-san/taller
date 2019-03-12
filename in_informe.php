@@ -149,7 +149,7 @@ if (isset($_REQUEST['id'])) {
 
                        <label >Hora de recepcion: </label>
                        <input type="time" name="HORA_RECEPCIoN" required  class="form-control"  >
-                       <label >Kilometrage: </label>
+                       <label >Kilometraje: </label>
                        <input type="number" name="KILOMETRAJE" required  class="form-control"  pattern="[0-9]"{2000000000} >
 
 

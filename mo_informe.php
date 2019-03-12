@@ -35,9 +35,9 @@ if (isset($_REQUEST['patente'])) {
         $PRoXIMA_MANTENCIoN = $_REQUEST['PRoXIMA_MANTENCIoN'];
         $FECHA_ENTREGA = $_REQUEST['FECHA_ENTREGA'];
         $HORA_ENTREGA = $_REQUEST['HORA_ENTREGA'];
-        $DIAGNoSTICO = trim(mb_strtolower($_REQUEST['DIAGNoSTICO'], 'UTF-8'));
-        $DETALLE = trim(mb_strtolower($_REQUEST['DETALLE'], 'UTF-8'));
-        $nota = trim(mb_strtolower($_REQUEST['nota'], 'UTF-8'));
+        $DIAGNoSTICO = trim($_REQUEST['DIAGNoSTICO'], 'UTF-8');
+        $DETALLE = trim($_REQUEST['DETALLE'], 'UTF-8');
+        $nota = trim($_REQUEST['nota'], 'UTF-8');
 
         $up = new update();
         $up->mo_informe($folio, $patente, $email, $FECHA_RECEPCIoN, $HORA_RECEPCIoN, $KILOMETRAJE, $PRoXIMA_MANTENCIoN, $FECHA_ENTREGA, $HORA_ENTREGA, $DIAGNoSTICO, $DETALLE, $nota);
@@ -98,7 +98,7 @@ if (isset($_REQUEST['patente'])) {
 
                     <label >Hora de recepcion: </label>
                     <input type="time" name="HORA_RECEPCIoN" required  class="form-control"  value="<?php echo $datos[0]['HORA_RECEPCIoN'];?>" >
-                    <label >Kilometrage: </label>
+                    <label >Kilometraje: </label>
                     <input type="number" name="KILOMETRAJE" required  class="form-control"  pattern="[0-9]"{20000000000}  value="<?php echo $datos[0]['KILOMETRAJE'];?>">
 
                 </div>

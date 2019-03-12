@@ -30,8 +30,8 @@ if (isset($_REQUEST['nombre'])) {
 
         $modi= new update();
 
-        $nombre = trim(strtolower($_REQUEST['nombre']));
-        $apellido = trim(strtolower($_REQUEST['ap']));
+        $nombre = trim($_REQUEST['nombre']);
+        $apellido = trim($_REQUEST['ap']);
         $tele = trim($_REQUEST['tele']);
         $correo = trim(strtolower($_REQUEST['correo']));
 
