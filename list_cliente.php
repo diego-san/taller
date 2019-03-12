@@ -62,21 +62,10 @@ $dato = array_reverse($dato);
 
                     <?php endif; ?>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
             <?php endforeach;?>
 
-            </div>
+
             </div>
     </div>
 
