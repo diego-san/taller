@@ -96,7 +96,7 @@ if (isset($_REQUEST['buscar'])){
                       <div class="col-md-3"></div>
                       <div class="col-md-6">
                           <div class="alert alert-danger" role="alert">
-                              Patente No registrada
+                              Patente No registra Informe
                           </div>
                       </div>
                       <div class="col-md-3"></div>

@@ -9,7 +9,7 @@ header("Content-Type: text/html;charset=utf-8");
 if(isset($_GET['f'])){
     $folio=$_GET['f'];
     if(strlen($folio) >= 10){
-    header("Location:inicio.php");
+    header("Location:modifica.php?e=1");
     }
     $out = new select();
     $datos = $out->datos_informe($folio);
@@ -105,12 +105,8 @@ if (isset($_REQUEST['patente'])) {
             </div>
             <div class="col-md-6">
 
-                <label  class=" control-label">Proxima mantencion:</label>
-                <div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="16" type="text"  readonly name="PRoXIMA_MANTENCIoN" value="<?php echo $datos[0]['PRoXIMA_MANTENCIoN'];?>">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
+                <label >Proxima mantencion: </label>
+                <input type="number" name="PRoXIMA_MANTENCIoN"  class="form-control"  pattern="[0-9]"{2000000000} >
 
 
 

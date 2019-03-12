@@ -147,16 +147,14 @@ if (isset($_REQUEST['id'])) {
                        <label >Kilometrage: </label>
                        <input type="number" name="KILOMETRAJE" required  class="form-control"  pattern="[0-9]"{2000000000} >
 
+
+
                    </div>
                </div>
                <div class="col-md-6">
 
-                   <label  class=" control-label">Proxima mantencion:</label>
-                   <div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                       <input class="form-control" size="16" type="text" value="" readonly name="PRoXIMA_MANTENCIoN">
-                       <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                   </div>
+                   <label >Proxima mantencion: </label>
+                   <input type="number" name="PRoXIMA_MANTENCIoN" required  class="form-control"  pattern="[0-9]"{2000000000} >
 
 
 
