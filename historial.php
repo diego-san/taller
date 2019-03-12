@@ -1,7 +1,38 @@
 <?php
 include "nav.php";
+require_once "bd/out.php";
 
-echo $_GET['p'];
+if (isset($_GET['p'])){
+    $patente = $_GET['p'];
+
+    if (strlen($patente )!=6){
+        header("Location:list_informe.php?e=1");
+    }
+
+    $out = new  select();
+    $dato_a= $out->datos_auto($patente);
+    if ($dato_a== 0){
+        header("Location:list_informe.php?e=1");
+    }
+    $dato_c = $out->datos_cliente($dato_a[0]['correo']);
+
+    $dato_info = $out->buscar_info_patente($patente);
+
+    if ($dato_info == 0){
+        header("Location:list_informe.php?e=1");
+    }
+
+    $dato_info =  array_reverse($dato_info);
+
+
+
+
+
+
+}else{
+    header("Location:list_informe.php?e=2");
+}
+
 
 ?>
 <!doctype html>
@@ -19,6 +50,80 @@ echo $_GET['p'];
 </head>
 <body>
 <?php echo $menu; ?>
+    <div class="container-fluid fondo" >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card  mb-3">
+                    <div class="card-header text-white bg-dark">Datos de cliente</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Nombre: <?php echo $dato_c[0]['nombre'].' '.$dato_c[0]['apellido'];?></li>
+                                    <li class="list-group-item">Telefono: <?php echo $dato_c[0]['telefono'];?></li>
+                                    <li class="list-group-item">Email:  <?php echo $dato_c[0]['correo'];?> </li>
+                                    <li class="list-group-item">Año:  <?php echo $dato_a[0]['ano'];?></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Patente:  <?php echo $dato_a[0]['patente'];?></li>
+                                    <li class="list-group-item">Marca:  <?php echo $dato_a[0]['marca'];?></li>
+                                    <li class="list-group-item">Modelo:  <?php echo $dato_a[0]['modelo'];?></li>
+                                    <li class="list-group-item">Cilindrada:  <?php echo $dato_a[0]['CILIN'];?></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php foreach ($dato_info as $key => $value):?>
+
+            <div class="col-md-12">
+                <div class="card  mb-3">
+                    <div class="card-header text-white bg-dark">Informe N° <?php echo $value['id'];?></div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Fecha de recepción: <?php echo $value['FECHA_RECEPCIoN'];?></li>
+                                    <li class="list-group-item">Hora de recepcion: <?php echo $value['HORA_RECEPCIoN'];?></li>
+                                    <li class="list-group-item">Kilometraje: <?php echo $value['KILOMETRAJE'];?></li>
+                                    <li class="list-group-item">Proxima mantencion: <?php echo $value['PRoXIMA_MANTENCIoN'];?></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Fecha de entrega: <?php echo $value['FECHA_ENTREGA'];?></li>
+                                    <li class="list-group-item">Hora de entrega: <?php echo $value['HORA_ENTREGA'];?></li>
+                                    <li class="list-group-item">Diagnóstico: <?php echo $value['DIAGNoSTICO'];?></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <h5 class="card-header text-white bg-secondary">Detalle</h5>
+                                    <div class="card-body">
+                                        <p class="card-text"><?php echo $value['DETALLE'];?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <h5 class="card-header text-white bg-secondary">Notas</h5>
+                                    <div class="card-body">
+                                        <p class="card-text"><?php echo $value['NOTA'];?></p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <?php endforeach;?>
+
+    </div>
+    </div>
 
 <?php echo $footer; ?>
 

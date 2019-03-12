@@ -22,52 +22,62 @@ $dato = array_reverse($dato);
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css">
-    <title></title>
+    <title>sistema taller</title>
 </head>
 <body>
 <?php echo $menu; ?>
     <div class="container fondo">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center text-dark">Lista de clientes</h1>
-            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-white bg-dark mb-3" >
+                        <h1 class="card-header text-center">Lista de clientes</h1>
+                    </div>
+                </div>
+
+
+
             <?php foreach($dato as $key => $value):?>
             <div class="col-md-12">
-                <div class="card text-center ">
-                    <div class="card-header">
-                        <?php echo $value['nombre'].' '.$value['apellido']; ?>
+                <div class="card">
+                    <div class="card-header text-white bg-secondary">
+                        <?php echo $value['correo'];?>
                     </div>
-
-                    <div class="card-body">
-                        <p class="card-text"><?php echo 'Correo: '.$value['correo'].' | Telefono: '.$value['telefono']; ?></p>
-                        <a href="mo_cliente.php?c=<?php echo $value['correo']; ?>" class="btn btn-danger">Modificar</a>
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><?php echo $value['nombre'].' '.$value['apellido'];?></h5>
+                        <p class="card-text">Telefono: <?php echo $value['telefono'];?></p>
+                        <a href="mo_cliente.php?c=<?php echo $value['correo'];?>" class="btn btn-danger">Modificar datos</a>
                     </div>
                     <?php $dato_a = $out->busca_auto_correo($value['correo']);?>
                     <?php if($dato_a != 0) : ?>
-                    <div class="card-footer text-muted">
-                        lista de Vehiculo
-                    </div>
+                        <?php foreach($dato_a as $key_2 => $value_2):?>
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $value_2['marca'];?></h5>
+                                    <p class="card-text">Modelo: <?php echo $value_2['modelo'];?></p>
+                                    <a href="historial.php?p=<?php echo $value_2['patente'];?>" class="btn btn-primary">Ver historial</a>
+                                </div>
+                            </div>
 
-                    <ul class="list-group list-group-flush">
-                    <?php foreach($dato_a as $key_2 => $value_2):?>
+                        <?php endforeach;?>
 
-                            <li class="list-group-item">
-                                <div class="p-1"><?php echo $value_2['marca'].' | Patente: '.$value_2['patente']; ?></div>
-                                <a href="historial.php?p=<?php echo $value_2['patente']; ?>" class="btn btn-primary text-right">Ver Historial</a>
-                            </li>
-
-                    <?php endforeach;?>
-                    </ul>
                     <?php endif; ?>
                 </div>
 
 
 
-            </div>
+
+
+
+
+
+
+
+
+
             <?php endforeach;?>
 
-
-        </div>
+            </div>
+            </div>
     </div>
 
 

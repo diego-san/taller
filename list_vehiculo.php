@@ -40,27 +40,38 @@ if ($data != 0){
 <div class="container fondo">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center text-dark">Lista de vehiculos</h1>
+            <h1 class="text-center bg-dark text-white mb-3 card-header">Lista de vehiculos</h1>
         </div>
 
         <?php foreach ($data as $key => $value):?>
         <div class="col-md-12">
-            <div class="card-header text-center">
-            <div>
-            <?php $cliente=  $out->datos_cliente($value['correo']);
-            echo ''.$cliente[0]['nombre'].' '.$cliente[0]['apellido'];
-            ?>
-                <div>
+            <div class="card-header  text-white bg-secondary">
+
+           
+
                 <?php echo ''.$value['correo'];?>
+            </div>
+        <div class="card-body text-center">
+            <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Marca: <?php echo $value['marca'];?></li>
+                <li class="list-group-item">Modelo: <?php echo $value['marca'];?></li>
+
+            </ul>
+        </div>
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cilindrada: <?php echo $value['marca'];?></li>
+                <li class="list-group-item">patente: <?php echo $value['patente'];?></li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <a href="historial.php?p=<?php echo $value['patente'];?>" class="btn btn-primary">Ver historia</a>
+                <a href="mo_vehiculo.php?p=<?php echo $value['patente'];?>" class="btn btn-danger">Modificar</a>
             </div>
             </div>
 
-        </div>
-        <div class="card-body text-center">
-            <h5 class="card-title"><?php echo $value['marca'];?></h5>
-            <p class="card-text"><?php echo 'Modelo: '.$value['modelo'].' Cilindrada: '.$value['CILIN'].' Patente: '.$value['patente'];?></p>
-            <a href="historial.php?p=<?php echo $value['patente'];?>" class="btn btn-primary">Ver historia</a>
-            <a href="mo_vehiculo.php?p=<?php echo $value['patente'];?>" class="btn btn-danger">Modificar</a>
         </div>
         </div>
 

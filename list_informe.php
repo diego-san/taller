@@ -4,6 +4,11 @@ require_once "bd/out.php";
 
 $error = 0;
 
+if (isset($_GET['e'])){
+    $error = $_GET['e'];
+
+}
+
 $valida= [];
 if (isset($_REQUEST['buscar'])){
 
@@ -78,6 +83,9 @@ if (isset($_REQUEST['buscar'])){
 
     <div class="container fondo">
         <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center bg-dark text-white mb-3 card-header">Buscar Informe</h1>
+            </div>
           <div class="col-md-12">
               <?php if($error == 3) : ?>
                   <div class="row">
@@ -117,7 +125,7 @@ if (isset($_REQUEST['buscar'])){
 
 
 
-              <h3 class="text-center text-dark">Buscar informe</h3>
+
               <form action="">
                   <div class="form-group">
                       <label >Buscar por Email, Patente o folio:</label>
@@ -127,9 +135,10 @@ if (isset($_REQUEST['buscar'])){
           </div>
             <?php if ($error == 0):?>
             <div class="col-md-12 p-2">
+                <h3 class="text-center bg-dark text-white mb-3 card-header mt-4">Lista de vehiculos</h3>
             <?php foreach ($valida as $key => $value):?>
                 <div class="card text-center">
-                    <h5 class="card-header">
+                    <h5 class="card-header bg-secondary text-white ">
                         <?php echo $value['marca'];?>
                     </h5>
                     <div class="card-body">
