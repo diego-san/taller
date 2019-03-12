@@ -71,8 +71,13 @@ if (isset($_REQUEST['id'])) {
 </head>
 <body>
     <?php  echo $menu;?>
-    <div class="container fondo">
-            <h1 class="text-center text-dark">Ingreso de Informe de vehiculo</h1>
+    <div class="container-fluid fondo">
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <h1 class="text-center bg-dark text-white mb-3 card-header ">Ingreso de Informe de vehiculo</h1>
+            </div>
+        </div>
+
         <?php if($error == 1) : ?>
            <div class="row">
                <div class="col-md-3"></div>
@@ -184,6 +189,7 @@ if (isset($_REQUEST['id'])) {
                   <div class="col-md-4"></div><div class="col-md-4">
                       <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
                   </div><div class="col-md-4"></div>
+                  <div class="col-md-12 mb-4"></div>
               </div>
            </form>
 

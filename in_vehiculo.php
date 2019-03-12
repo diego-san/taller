@@ -57,13 +57,18 @@ if (isset($_REQUEST['patente'])) {
     <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="css/estilo.css">
 
-    <title>Document</title>
+    <title>sistema taller</title>
 </head>
 <body>
 <?php  echo $menu;?>
 
-<div class="container fondo">
-    <h1 class="text-center text-dark">Ingreso de datos vehiculo</h1>
+<div class="container-fluid fondo">
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <h1 class="text-center bg-dark text-white mb-3 card-header ">Ingreso de datos vehiculo</h1>
+        </div>
+    </div>
+
 
     <?php if($error == 1) : ?>
         <div class="row">
@@ -115,6 +120,7 @@ if (isset($_REQUEST['patente'])) {
 
     <form action="" method="post">
         <div class="row">
+            <div class="col-md-3"></div>
             <div class="col-md-6">
                 <label >Patente: </label>
                 <input type="text" name="patente" required  class="form-control" minlength="6" maxlength="6" >
@@ -134,15 +140,14 @@ if (isset($_REQUEST['patente'])) {
                 <label >Email de Dueño de vehiculo:</label>
                 <input type="email" class="form-control" required  name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
             </div>
-            <div class="col-md-6">
-
-            </div>
+            <div class="col-md-3"></div>
         </div>
 
-        <div class="row" style="margin-top: 20px;">
+        <div class="row " style="margin-top: 20px;">
             <div class="col-md-4"></div><div class="col-md-4">
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
             </div><div class="col-md-4"></div>
+            <div class="col-md-12 mb-4"></div>
         </div>
     </form>
 

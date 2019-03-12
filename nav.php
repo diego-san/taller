@@ -40,6 +40,6 @@ $menu = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 </nav>';
 
 $footer = "<div class=\"footer\">
-        <h5 class='text-center text-white p-4'>sistema de taller version 0.2.3</h5>
+        <h5 class='text-center text-white p-4'>sistema de taller version 0.3</h5>
 </div>";
  ?>

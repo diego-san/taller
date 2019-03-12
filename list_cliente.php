@@ -26,9 +26,9 @@ $dato = array_reverse($dato);
 </head>
 <body>
 <?php echo $menu; ?>
-    <div class="container fondo">
+    <div class="container-fluid fondo">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mt-4">
                     <div class="card text-white bg-dark mb-3" >
                         <h1 class="card-header text-center">Lista de clientes</h1>
                     </div>

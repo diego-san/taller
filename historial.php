@@ -52,7 +52,7 @@ if (isset($_GET['p'])){
 <?php echo $menu; ?>
     <div class="container-fluid fondo" >
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-4">
                 <div class="card  mb-3">
                     <div class="card-header text-white bg-dark">Datos de cliente</div>
                     <div class="card-body">

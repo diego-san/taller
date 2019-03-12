@@ -37,9 +37,9 @@ if ($data != 0){
 <body>
 <?php echo $menu; ?>
 
-<div class="container fondo">
+<div class="container-fluid fondo">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-4">
             <h1 class="text-center bg-dark text-white mb-3 card-header">Lista de vehiculos</h1>
         </div>
 
@@ -56,13 +56,13 @@ if ($data != 0){
         <div class="col-md-6">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Marca: <?php echo $value['marca'];?></li>
-                <li class="list-group-item">Modelo: <?php echo $value['marca'];?></li>
+                <li class="list-group-item">Modelo: <?php echo $value['modelo'];?></li>
 
             </ul>
         </div>
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cilindrada: <?php echo $value['marca'];?></li>
+                <li class="list-group-item">Cilindrada: <?php echo $value['CILIN'];?></li>
                 <li class="list-group-item">patente: <?php echo $value['patente'];?></li>
                 </ul>
             </div>

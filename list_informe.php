@@ -81,9 +81,9 @@ if (isset($_REQUEST['buscar'])){
 <body>
 <?php echo $menu; ?>
 
-    <div class="container fondo">
+    <div class="container-fluid fondo">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-4">
                 <h1 class="text-center bg-dark text-white mb-3 card-header">Buscar Informe</h1>
             </div>
           <div class="col-md-12">
@@ -134,8 +134,11 @@ if (isset($_REQUEST['buscar'])){
                   <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
           </div>
             <?php if ($error == 0):?>
-            <div class="col-md-12 p-2">
+                <div class="col-md-12 p-2">
+            <?php if (!empty($valida)):?>
+
                 <h3 class="text-center bg-dark text-white mb-3 card-header mt-4">Lista de vehiculos</h3>
+                <?php endif;?>
             <?php foreach ($valida as $key => $value):?>
                 <div class="card text-center">
                     <h5 class="card-header bg-secondary text-white ">

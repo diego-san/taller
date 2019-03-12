@@ -39,10 +39,14 @@ if (isset($_REQUEST['correo'])){
 </head>
 <body>
 <?php echo $menu; ?>
-    <div class="container fondo">
+    <div class="container-fluid fondo">
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <h1 class="text-center bg-dark text-white mb-3 card-header ">Modificarr datos</h1>
+            </div>
+        </div>
 
 
-        <h1 class="text-center text-dark p-3">Modificar datos</h1>
 
             <?php if($error == 1) : ?>
                 <div class="row">
@@ -93,9 +97,9 @@ if (isset($_REQUEST['correo'])){
             </div>
         <?php endif; ?>
 
-        <div class="row">
-            <div class="col-md-4">
-                <h3 class="text-center text-dark">Modificar informe</h3>
+        <div class="row ">
+            <div class="col-md-4 mt-4">
+                <h3 class="text-center  text-white mb-3 bg-secondary">Modificar Informe</h3>
                 <form action="">
                     <div class="form-group">
                     <label >Ingresar folio: </label>
@@ -106,7 +110,7 @@ if (isset($_REQUEST['correo'])){
                 </form>
 
             </div>
-            <div class="col-md-4"><h3 class="text-center text-dark">Modificar Vehiculo</h3>
+            <div class="col-md-4 mt-4"> <h3 class="text-center  text-white mb-3 bg-secondary">Modificar Vehiculo</h3>
                 <form action="">
                     <div class="form-group">
                         <label >Ingresar Patente: </label>
@@ -115,8 +119,8 @@ if (isset($_REQUEST['correo'])){
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
 
                 </form></div>
-            <div class="col-md-4">
-                <h3 class="text-center text-dark">Modificar Cliente</h3>
+            <div class="col-md-4 mt-4 mb-4">
+                <h3 class="text-center  text-white mb-3 bg-secondary">Modificar Cliente</h3>
                 <form action="">
                     <div class="form-group">
                         <label >Ingresar Email:</label>
