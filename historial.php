@@ -67,7 +67,7 @@ if (isset($_GET['p'])){
                             </div>
                             <div class="col-md-6">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Patente:  <?php echo $dato_a[0]['patente'];?></li>
+                                    <li class="list-group-item text-danger">Patente:  <?php echo $dato_a[0]['patente'];?></li>
                                     <li class="list-group-item">Marca:  <?php echo $dato_a[0]['marca'];?></li>
                                     <li class="list-group-item">Modelo:  <?php echo $dato_a[0]['modelo'];?></li>
                                     <li class="list-group-item">Cilindrada:  <?php echo $dato_a[0]['CILIN'];?></li>

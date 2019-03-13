@@ -70,15 +70,22 @@ if (isset($_REQUEST['nombre'])) {
 <body>
 <?php echo $menu; ?>
 
-<div class="container fondo">
-    <h1 class="text-center text-dark">Modificar datos de  Cliente</h1>
+<div class="container-fluid fondo">
+
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <h1 class="text-center bg-dark text-white mb-3 card-header ">Modificar datos de  Cliente</h1>
+        </div>
+    </div>
 
 
 
 
     <form action="" method="post">
         <div class="row">
+            <div class="col-md-3"></div>
             <div class="col-md-6">
+
                 <label >Nombre: </label>
                 <input type="text" name="nombre" required  class="form-control" minlength="1"  value="<?php echo $datos[0]['nombre'];?>">
 
@@ -92,9 +99,7 @@ if (isset($_REQUEST['nombre'])) {
                 <input type="email" class="form-control" required  name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" value="<?php echo $datos[0]['correo'];?>">
 
             </div>
-            <div class="col-md-6">
-
-            </div>
+            <div class="col-md-3"></div>
         </div>
 
         <div class="row" style="margin-top: 20px;">
@@ -103,6 +108,7 @@ if (isset($_REQUEST['nombre'])) {
                     Modificar
                 </button>
             </div><div class="col-md-4"></div>
+            <div class="col-md-12 mb-4"></div>
         </div>
 
 

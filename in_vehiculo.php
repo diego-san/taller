@@ -6,7 +6,7 @@ include "bd/out.php";
 $error = 0;
 
 if (isset($_REQUEST['patente'])) {
-    $correo = trim(mb_strtolower($_REQUEST['correo']));
+    $correo = trim(mb_strtoupper($_REQUEST['correo']));
     $out = new select();
 
     if($correo== $out->compru_clinete($correo)[0][0]) {
@@ -65,7 +65,7 @@ if (isset($_REQUEST['patente'])) {
 <div class="container-fluid fondo">
     <div class="row">
         <div class="col-md-12 mt-4">
-            <h1 class="text-center bg-dark text-white mb-3 card-header ">Ingreso de datos vehiculo</h1>
+            <h1 class="text-center bg-dark text-white mb-3 card-header ">datos vehiculo</h1>
         </div>
     </div>
 

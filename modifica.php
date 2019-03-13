@@ -8,12 +8,12 @@ if(isset($_GET['e'])){
 
 if (isset($_REQUEST['id'])){
 
-    header("Location:mo_informe.php?f=".trim(mb_strtolower($_REQUEST['id'])));
+    header("Location:mo_informe.php?f=".trim(mb_strtoupper($_REQUEST['id'])));
 }
 
 if (isset($_REQUEST['patente'])){
 
-    header("Location:mo_vehiculo.php?p=".trim(mb_strtolower($_REQUEST['patente'])));
+    header("Location:mo_vehiculo.php?p=".trim(mb_strtoupper($_REQUEST['patente'])));
 }
 
 if (isset($_REQUEST['correo'])){
@@ -99,7 +99,7 @@ if (isset($_REQUEST['correo'])){
 
         <div class="row ">
             <div class="col-md-4 mt-4">
-                <h3 class="text-center  text-white mb-3 bg-secondary">Modificar Informe</h3>
+                <h3 class="text-center  text-white mb-3 bg-secondary p-2">Modificar Informe</h3>
                 <form action="">
                     <div class="form-group">
                     <label >Ingresar folio: </label>
@@ -110,23 +110,23 @@ if (isset($_REQUEST['correo'])){
                 </form>
 
             </div>
-            <div class="col-md-4 mt-4"> <h3 class="text-center  text-white mb-3 bg-secondary">Modificar Vehiculo</h3>
+            <div class="col-md-4 mt-4"> <h3 class="text-center  text-white mb-3 bg-secondary p-2">Modificar Vehiculo</h3>
                 <form action="">
                     <div class="form-group">
                         <label >Ingresar Patente: </label>
                         <input type="text" name="patente" required  class="form-control" minlength="6" maxlength="6">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Buscar</button>
 
                 </form></div>
             <div class="col-md-4 mt-4 mb-4">
-                <h3 class="text-center  text-white mb-3 bg-secondary">Modificar Cliente</h3>
+                <h3 class="text-center  text-white mb-3 bg-secondary p-2">Modificar Cliente</h3>
                 <form action="">
                     <div class="form-group">
                         <label >Ingresar Email:</label>
                         <input type="email" class="form-control" required  name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
+                    <button type="submit" class="btn btn-warning text-white btn-lg btn-block">Buscar</button>
 
                 </form>
             </div>

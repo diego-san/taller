@@ -54,6 +54,7 @@ $dato = array_reverse($dato);
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $value_2['marca'];?></h5>
                                     <p class="card-text">Modelo: <?php echo $value_2['modelo'];?></p>
+                                    <p class="card-text text-danger">Patente: <?php echo $value_2['patente'];?></p>
                                     <a href="historial.php?p=<?php echo $value_2['patente'];?>" class="btn btn-primary">Ver historial</a>
                                 </div>
                             </div>

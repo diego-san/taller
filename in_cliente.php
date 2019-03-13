@@ -60,7 +60,7 @@ if (isset($_REQUEST['nombre'])) {
     <div class="container-fluid fondo">
         <div class="row">
             <div class="col-md-12 mt-4">
-                <h1 class="text-center bg-dark text-white mb-3 card-header ">Ingreso de datos Cliente</h1>
+                <h1 class="text-center bg-dark text-white mb-3 card-header ">datos Cliente</h1>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ if (isset($_REQUEST['nombre'])) {
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="alert alert-success" role="alert">
-                        Cliente ingresado corectamente
+                        Cliente ingresado correctamente
                     </div>
                 </div>
                 <div class="col-md-3"></div>

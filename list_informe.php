@@ -17,14 +17,17 @@ if (isset($_REQUEST['buscar'])){
     $buscar = trim(mb_strtolower($_REQUEST['buscar']));
 
     if (strlen($buscar)==6){
-        $valida = $out->buscar_info_patente($buscar);
+        $pa = mb_strtoupper($buscar);
+        $valida = $out->buscar_info_patente($pa);
         if ($valida == 0){
 
             $error = 1;
 
+
         }else{
 
-            header("Location:historial.php?p=".$buscar);
+            header("Location:historial.php?p=".$pa);
+
         }
 
 
@@ -83,10 +86,13 @@ if (isset($_REQUEST['buscar'])){
 
     <div class="container-fluid fondo">
         <div class="row">
-            <div class="col-md-12 mt-4">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 mt-4">
                 <h1 class="text-center bg-dark text-white mb-3 card-header">Buscar Informe</h1>
             </div>
-          <div class="col-md-12">
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+          <div class="col-md-6">
               <?php if($error == 3) : ?>
                   <div class="row">
                       <div class="col-md-3"></div>
@@ -133,11 +139,12 @@ if (isset($_REQUEST['buscar'])){
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
           </div>
+            <div class="col-md-3"></div>
             <?php if ($error == 0):?>
                 <div class="col-md-12 p-2">
             <?php if (!empty($valida)):?>
 
-                <h3 class="text-center bg-dark text-white mb-3 card-header mt-4">Lista de vehiculos</h3>
+                <h3 class="text-center bg-info text-white mb-3 card-header mt-4">Lista de vehiculos</h3>
                 <?php endif;?>
             <?php foreach ($valida as $key => $value):?>
                 <div class="card text-center">

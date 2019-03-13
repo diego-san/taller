@@ -63,7 +63,7 @@ if ($data != 0){
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cilindrada: <?php echo $value['CILIN'];?></li>
-                <li class="list-group-item">patente: <?php echo $value['patente'];?></li>
+                <li class="list-group-item text-danger">patente: <?php echo $value['patente'];?></li>
                 </ul>
             </div>
             <div class="col-md-12">

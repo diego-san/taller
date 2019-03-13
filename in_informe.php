@@ -9,14 +9,14 @@ mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
 if (isset($_REQUEST['id'])) {
-    $patente = trim(mb_strtolower($_REQUEST['patente']));
+    $patente = trim(mb_strtoupper($_REQUEST['patente']));
     $out = new select();
 
     if($patente == $out->compru_auto($patente)[0][0]){
 
 
 
-    $folio = $_REQUEST['id'];
+    $folio = trim(mb_strtoupper($_REQUEST['id']));
     $idv = $out->compru_informe($folio);
 
 
@@ -39,7 +39,19 @@ if (isset($_REQUEST['id'])) {
         $idv_in = $out->compru_informe($folio);
 
         if ($folio==$idv_in[0][0]){
-            $error = 4;
+
+            $ve= $out->datos_informe($folio);
+
+            if ($folio == $ve[0]['id'] && $patente == $ve[0]['patente'] &&  $email == $ve[0]['email'] &&  $FECHA_RECEPCIoN == $ve[0]['FECHA_RECEPCIoN'] && $HORA_RECEPCIoN == $ve[0]['HORA_RECEPCIoN'] &&  $KILOMETRAJE == $ve[0]['KILOMETRAJE'] && $PRoXIMA_MANTENCIoN == $ve[0]['PRoXIMA_MANTENCIoN'] &&$FECHA_ENTREGA == $ve[0]['FECHA_ENTREGA'] && $HORA_ENTREGA == $ve[0]['HORA_ENTREGA'] && $DIAGNoSTICO == $ve[0]['DIAGNoSTICO'] && $DETALLE == $ve[0]['DETALLE'] && $nota == $ve[0]['NOTA']){
+                $error = 4;
+            }else{
+                header("Location:mo_informe.php?f=".$folio."&e=9");
+            }
+
+
+
+
+
         }else{
             $error = 5;
         }
@@ -74,12 +86,12 @@ if (isset($_REQUEST['id'])) {
     <div class="container-fluid fondo">
         <div class="row">
             <div class="col-md-12 mt-4">
-                <h1 class="text-center bg-dark text-white mb-3 card-header ">Ingreso de Informe de vehiculo</h1>
+                <h1 class="text-center bg-dark text-white mb-3 card-header ">Informe de vehiculo</h1>
             </div>
         </div>
 
         <?php if($error == 1) : ?>
-           <div class="row">
+           <div class="row ">
                <div class="col-md-3"></div>
                <div class="col-md-6">
                    <div class="alert alert-danger" role="alert">
@@ -95,7 +107,7 @@ if (isset($_REQUEST['id'])) {
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="alert alert-success" role="alert">
-                        Informe ingresado corectamente
+                        Informe ingresado correctamente
                     </div>
                 </div>
                 <div class="col-md-3"></div>
@@ -128,11 +140,11 @@ if (isset($_REQUEST['id'])) {
 
 
            <form action="" id="usrform" >
-               <div class="row">
+               <div class="row p-2">
                <div class="col-md-6">
                    <div class="form-group">
                        <label >Folio: </label>
-                       <input type="text" name="id" required  class="form-control" minlength="8"  >
+                       <input type="text" name="id" required  class="form-control" minlength="7" maxlength="10"  >
                        <label >Patente: </label>
                        <input type="text" name="patente" required  class="form-control" minlength="6" maxlength="6" >
                        <label >Email:</label>

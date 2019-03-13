@@ -26,20 +26,24 @@ $menu = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             </li>
            
             <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     Buscar
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="list_vehiculo.php">Ver lista de vehiculos</a>
                     <a class="dropdown-item" href="list_cliente.php">Ver lista de clientes</a>
-                    <a class="dropdown-item" href="list_informe.php">Ver Informe</a>
+                    <a class="dropdown-item" href="list_informe.php">Buscar Informe</a>
                 </div>
             </li>
         </ul>
+       <form class="form-inline my-2 my-lg-0 ml-auto" action="list_informe.php">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar Informe" aria-label="Search" name="buscar">
+      <button class="btn btn-primary my-2 my-sm-0 " type="submit">Buscar</button>
+    </form>
     </div>
 </nav>';
 
 $footer = "<div class=\"footer\">
-        <h5 class='text-center text-white p-4'>sistema de taller version 0.3</h5>
+        <h5 class='text-center text-white p-4'>sistema de taller version 0.4</h5>
 </div>";
  ?>

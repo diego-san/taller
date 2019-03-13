@@ -23,7 +23,7 @@ if(isset($_GET['p'])){
 
 if(isset($_REQUEST['patente'])) {
 
-        $patente = trim(mb_strtolower($_REQUEST['patente']));
+        $patente = trim(mb_strtoupper($_REQUEST['patente']));
 
     if ($dato[0]['patente']  == $out->compru_auto($dato[0]['patente'] )[0][0]) {
 
@@ -73,11 +73,17 @@ if(isset($_REQUEST['patente'])) {
 </head>
 <body>
 <?php echo $menu; ?>
-<div class="container fondo">
-    <h1 class="text-center text-dark">Modificar  datos de vehiculo</h1>
+<div class="container-fluid fondo">
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <h1 class="text-center bg-dark text-white mb-3 card-header ">Modificar  datos de vehiculo</h1>
+        </div>
+    </div>
+
 
     <form action="" method="post">
         <div class="row">
+            <div class="col-md-3"></div>
             <div class="col-md-6">
                 <label >Patente: </label>
                 <input type="text" name="patente" required  class="form-control" minlength="6" maxlength="6" value="<?php echo $dato[0]['patente'];?>" >
@@ -97,17 +103,18 @@ if(isset($_REQUEST['patente'])) {
                 <label >Email de Dueño de vehiculo:</label>
                 <input type="email" class="form-control" required  name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  value="<?php echo $dato[0]['correo'];?>">
             </div>
-            <div class="col-md-6">
-
-            </div>
+            <div class="col-md-3"></div>
         </div>
 
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-4"></div><div class="col-md-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
                 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
                     Modificar
                 </button>
-            </div><div class="col-md-4"></div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-12 mb-4"></div>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

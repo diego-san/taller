@@ -4,7 +4,7 @@ require_once "bd/out.php";
 require_once "bd/update.php";
 
 
-
+$error = 0;
 header("Content-Type: text/html;charset=utf-8");
 if(isset($_GET['f'])){
     $folio=$_GET['f'];
@@ -13,17 +13,23 @@ if(isset($_GET['f'])){
     }
     $out = new select();
     $datos = $out->datos_informe($folio);
+    if (isset($_GET['e'])){
+        $error = $_GET['e'];
+
+    }
 }else{
     header("Location:modifica.php");
 }
 
 
 
+
+
 $error = 0;
 if (isset($_REQUEST['patente'])) {
-    $folio = $_REQUEST['id'];
+    $folio = trim(mb_strtoupper($_REQUEST['id']));
     if ($folio == $out->compru_informe($folio)[0][0]) {
-        $patente = trim(mb_strtolower($_REQUEST['patente']));
+        $patente = trim(mb_strtoupper($_REQUEST['patente']));
 
         if ($patente == $out->compru_auto($patente)[0][0]) {
 
@@ -73,8 +79,24 @@ if (isset($_REQUEST['patente'])) {
 <body>
 <?php echo$menu; ?>
 
-<div class="container fondo">
-    <h1 class="text-center text-dark">Modificar  Informe de vehiculo</h1>
+<div class="container-fluid fondo">
+
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <h1 class="text-center bg-dark text-white mb-3 card-header ">Modificar Informe de vehiculo </h1>
+        </div>
+    </div>
+    <?php if($error == 9) : ?>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="alert alert-warning" role="alert">
+                    Verifica los datos
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    <?php endif; ?>
 
     <form  id="usrform" method="post">
         <div class="row">
@@ -106,7 +128,7 @@ if (isset($_REQUEST['patente'])) {
             <div class="col-md-6">
 
                 <label >Proxima mantencion: </label>
-                <input type="number" name="PRoXIMA_MANTENCIoN"  class="form-control"  pattern="[0-9]"{2000000000} >
+                <input type="number" name="PRoXIMA_MANTENCIoN"  class="form-control"  pattern="[0-9]{2000000000}"  value="<?php echo $datos[0]['PRoXIMA_MANTENCIoN'];?>" >
 
 
 
@@ -138,6 +160,7 @@ if (isset($_REQUEST['patente'])) {
                     Modificar
                 </button>
             </div><div class="col-md-4"></div>
+            <div class="col-md-12 mb-4"></div>
         </div>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
