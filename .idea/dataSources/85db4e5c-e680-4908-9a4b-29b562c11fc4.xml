@@ -982,146 +982,182 @@
     <table id="247" parent="11" name="cliente"/>
     <table id="248" parent="11" name="dato_auto"/>
     <table id="249" parent="11" name="informe"/>
-    <column id="250" parent="247" name="nombre">
+    <table id="250" parent="11" name="user"/>
+    <column id="251" parent="247" name="nombre">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="247" name="apellido">
+    <column id="252" parent="247" name="apellido">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="247" name="telefono">
+    <column id="253" parent="247" name="telefono">
       <Position>3</Position>
       <DataType>varchar(12)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="247" name="correo">
+    <column id="254" parent="247" name="correo">
       <Position>4</Position>
-      <DataType>varchar(200)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="254" parent="247" name="PRIMARY">
+    <key id="255" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>correo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="255" parent="248" name="patente">
+    <column id="256" parent="248" name="patente">
       <Position>1</Position>
       <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="248" name="marca">
+    <column id="257" parent="248" name="marca">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="248" name="modelo">
+    <column id="258" parent="248" name="modelo">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="248" name="CILIN">
+    <column id="259" parent="248" name="CILIN">
       <Position>4</Position>
       <DataType>varchar(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="248" name="ano">
+    <column id="260" parent="248" name="ano">
       <Position>5</Position>
       <DataType>int(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="248" name="correo">
+    <column id="261" parent="248" name="correo">
       <Position>6</Position>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="261" parent="248" name="PRIMARY">
+    <key id="262" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>patente</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="262" parent="249" name="patente">
+    <column id="263" parent="249" name="patente">
       <Position>1</Position>
       <DataType>varchar(8)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="249" name="email">
+    <column id="264" parent="249" name="email">
       <Position>2</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="249" name="FECHA_RECEPCIoN">
+    <column id="265" parent="249" name="FECHA_RECEPCIoN">
       <Position>3</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="249" name="HORA_RECEPCIoN">
+    <column id="266" parent="249" name="HORA_RECEPCIoN">
       <Position>4</Position>
       <DataType>time|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="249" name="KILOMETRAJE">
+    <column id="267" parent="249" name="KILOMETRAJE">
       <Position>5</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="249" name="PRoXIMA_MANTENCIoN">
+    <column id="268" parent="249" name="PRoXIMA_MANTENCIoN">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
+      <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="249" name="FECHA_ENTREGA">
+    <column id="269" parent="249" name="FECHA_ENTREGA">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="249" name="HORA_ENTREGA">
+    <column id="270" parent="249" name="HORA_ENTREGA">
       <Position>8</Position>
       <DataType>time|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="249" name="DIAGNoSTICO">
+    <column id="271" parent="249" name="DIAGNoSTICO">
       <Position>9</Position>
       <DataType>varchar(1000)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="249" name="DETALLE">
+    <column id="272" parent="249" name="DETALLE">
       <Position>10</Position>
       <DataType>varchar(2000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="249" name="NOTA">
+    <column id="273" parent="249" name="NOTA">
       <Position>11</Position>
       <DataType>varchar(1000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="249" name="id">
+    <column id="274" parent="249" name="id">
       <Position>12</Position>
       <DataType>varchar(12)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="274" parent="249" name="PRIMARY">
+    <key id="275" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="276" parent="250" name="correo">
+      <Position>1</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="277" parent="250" name="password">
+      <Position>2</Position>
+      <DataType>varchar(250)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="250" name="tipo">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="279" parent="250" name="nombre">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="280" parent="250" name="apellido">
+      <Position>5</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="281" parent="250" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>correo</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

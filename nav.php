@@ -35,15 +35,47 @@ $menu = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <a class="dropdown-item" href="list_informe.php">Buscar Informe</a>
                 </div>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="modifica.php">Eliminar</a>
+            </li>
+            <li class="nav-item dropdown active ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                   Opciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Lista usuarios</a>
+                    <a class="dropdown-item" href="in_user.php">Ingresar Usuario</a>
+                    <a class="dropdown-item" href="list_informe.php">Cambia contraseña</a>
+                </div>
+            </li>
         </ul>
        <form class="form-inline my-2 my-lg-0 ml-auto" action="list_informe.php">
       <input class="form-control mr-sm-2" type="search" placeholder="Buscar Informe" aria-label="Search" name="buscar">
       <button class="btn btn-primary my-2 my-sm-0 " type="submit">Buscar</button>
     </form>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+                <a class="nav-link active" href="close.php">Cerrar</a>
+            </li>
+      
+    </ul>
     </div>
 </nav>';
 
 $footer = "<div class=\"footer\">
-        <h5 class='text-center text-white p-4'>sistema de taller version 0.4</h5>
+        <h5 class='text-center text-white p-4'>sistema de taller version 0.5</h5>
 </div>";
+
+session_start();
+
+$varsesion=$_SESSION['user'];
+
+if ($varsesion == null || $varsesion == '') {
+    header("Location:index.php");
+    die();
+}
+
+
  ?>
+
+

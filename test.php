@@ -1,28 +1,8 @@
+
 <?php
-
-$dato= '1) hola 2) mundo 3)nada';
-
-$e =   substr_count($dato, ')');
-$conttador = strlen($dato);
-
-
-
-for ($i = 0; $i < $e; $i ++ ) {
-
-    if ($i == 0) {
-        $position = strpos($dato, ')');
-        $rest = substr($dato ,$position+1);
-
-    }
-
-    $position = strpos($rest, ')');
-    echo substr($rest ,0,$position-1).'</br>';
-    $rest =substr($rest ,$position);
+$esperado   =  password_hash('1234', PASSWORD_BCRYPT, array("cost" => 10));
 
 
 
 
-
-
-
-}
+echo password_verify('1234', '$2y$10$HqhKabMiBPG2yY0HyrvZMOEy0v861/noX/hZQHHuKq4cztH95Bine');

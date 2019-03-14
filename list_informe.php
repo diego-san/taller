@@ -138,6 +138,7 @@ if (isset($_REQUEST['buscar'])){
                       <input  type="text" class="form-control" required  name="buscar" minlength="6">
                   </div>
                   <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
+              </form>
           </div>
             <div class="col-md-3"></div>
             <?php if ($error == 0):?>

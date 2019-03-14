@@ -56,4 +56,21 @@ class insertar{
     }
 
 
+    function in_user($no,$ap,$co,$pas,$tipo){
+        include "ce/cer.php";
+        $esperado   =  password_hash($pas, PASSWORD_BCRYPT, array("cost" => 10));
+        $sql ="INSERT INTO user (correo, password, tipo, nombre, apellido) VALUES (?,?,?,?,?)";
+        $smt=$conn->prepare($sql);
+        $smt->bindparam(1,$co);
+        $smt->bindparam(2,$esperado);
+        $smt->bindparam(3,$tipo);
+        $smt->bindparam(4,$no);
+        $smt->bindparam(5,$ap);
+        $smt->execute();
+        $conn=null;
+
+
+    }
+
+
 }

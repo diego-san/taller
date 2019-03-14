@@ -180,10 +180,43 @@ class select{
             return $resultado;
         }
 
-
-
     }
 
+    function login($correo){
+        include "ce/cer.php";
+
+        $sql ="select * from user WHERE correo = '$correo'";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+    }
+
+
+    function compr_user($correo){
+        include "ce/cer.php";
+
+        $sql ="select correo from user WHERE correo = '$correo'";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+
+    }
 
 
 
