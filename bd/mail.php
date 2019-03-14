@@ -1,7 +1,7 @@
 <?php
 class mail {
 
-    function regis($correo,$nombre, $apellido){
+    function regis($correo,$nombre, $apellido,$pass){
         $asunto = "Este mensaje es de prueba";
         $cuerpo = ' 
 <html> 
@@ -10,9 +10,9 @@ class mail {
 </head> 
 <body> 
 <h1>Hola '.$nombre.' '.$apellido.'</h1> 
-<p> 
-<b>Bienvenidos a mi correo electrónico de prueba</b>. Estoy encantado de tener tantos lectores. Este cuerpo del mensaje es del artículo de envío de mails por PHP. Habría que cambiarlo para poner tu propio cuerpo. Por cierto, cambia también las cabeceras del mensaje. 
-</p> 
+<p>Correo:'.$correo.' </p> 
+<p>Cotraseña:'.$pass.' </p> 
+<p>Recuerda cambiar tu contraseña</p> 
 </body> 
 </html> 
 ';

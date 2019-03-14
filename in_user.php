@@ -18,7 +18,7 @@ if($_SESSION['tipo'] == 'admin'){
             $in = new insertar();
             $in->in_user($nombre, $apellido, $email, $pass, $tipo);
             $mail = new mail();
-            $mail->regis($email,$nombre,$apellido);
+            $mail->regis($email,$nombre,$apellido,$pass);
             $error = 2;
         }else{
             $error = 1;
