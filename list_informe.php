@@ -46,7 +46,7 @@ if (isset($_REQUEST['buscar'])){
 
 
 
-    }elseif ((false !== strpos($buscar, "@") && false !== strpos($buscar, "."))== 1){
+    }elseif (filter_var($buscar, FILTER_VALIDATE_EMAIL)){
 
         $valida = $out->busca_auto_correo($buscar);
 
