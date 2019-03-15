@@ -2,7 +2,7 @@
 class mail {
 
     function regis($correo,$nombre, $apellido,$pass){
-        $asunto = "Este mensaje es de prueba";
+        $asunto = "sistema taller registro";
         $cuerpo = ' 
 <html> 
 <head> 

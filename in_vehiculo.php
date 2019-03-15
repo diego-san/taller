@@ -6,7 +6,7 @@ include "bd/out.php";
 $error = 0;
 
 if (isset($_REQUEST['patente'])) {
-    $correo = trim(mb_strtoupper($_REQUEST['correo']));
+    $correo = trim(mb_strtolower($_REQUEST['correo']));
     $out = new select();
 
     if($correo== $out->compru_clinete($correo)[0][0]) {

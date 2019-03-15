@@ -171,7 +171,7 @@ if (isset($_REQUEST['id'])) {
                <div class="col-md-6">
 
                    <label >Proxima mantencion: </label>
-                   <input type="number" name="PRoXIMA_MANTENCIoN" required  class="form-control"  pattern="[0-9]"{2000000000} >
+                   <input type="number" name="PRoXIMA_MANTENCIoN"  class="form-control"  pattern="[0-9]"{2000000000} >
 
 
 
