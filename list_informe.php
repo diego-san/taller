@@ -18,20 +18,15 @@ if (isset($_REQUEST['buscar'])){
 
     if (strlen($buscar)==6){
         $pa = mb_strtoupper($buscar);
-        $valida = $out->buscar_info_patente($pa);
-        if ($valida == 0){
+        $valida = $out->compru_informe_patente($pa);
 
-            $error = 1;
-
-
+        if ($valida != 0){
+            $link = "historial.php?p=".$pa;
+            echo "<script> location.href='".$link."';</script>";
+            die();
         }else{
-
-            header("Location:historial.php?p=".$pa);
-
+            $error = 1;
         }
-
-
-
 
     }elseif (strlen($buscar) >= 7 and strlen($buscar) <= 10){
 
@@ -40,7 +35,9 @@ if (isset($_REQUEST['buscar'])){
         if ($valida == 0){
             $error = 2;
         }else{
-            header("Location:historial.php?p=".$valida[0]['patente']);
+            $link = "historial.php?p=".$valida[0]['patente'];
+            echo "<script> location.href='".$link."';</script>";
+            die();
         }
 
 
@@ -49,7 +46,7 @@ if (isset($_REQUEST['buscar'])){
     }elseif (filter_var($buscar, FILTER_VALIDATE_EMAIL)){
 
         $valida = $out->busca_auto_correo($buscar);
-
+        echo 'antes co';
         if ($valida == 0){
             $error = 3;
 

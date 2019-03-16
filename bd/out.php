@@ -217,6 +217,23 @@ class select{
         }
 
     }
+    function compru_informe_patente($patente){
+        include "ce/cer.php";
+
+        $sql ="select patente from informe WHERE patente = '$patente'";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+
+    }
 
 
 
