@@ -120,6 +120,17 @@ class update{
 
     }
 
+    function cambiar_pass($user,$pass){
+        include "ce/cer.php";
+        $esperado   =  password_hash($pass, PASSWORD_BCRYPT, array("cost" => 10));
+        $sql ="UPDATE user set password = :pass WHERE  correo = :correo";
+        $smt=$conn->prepare($sql);
+        $smt->bindValue(":pass", $esperado);
+        $smt->bindValue(":correo", $user);
+        $smt->execute();
+        $conn=null;
+    }
+
 
 
 }

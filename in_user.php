@@ -10,11 +10,12 @@ if($_SESSION['tipo'] == 'admin'){
         $email =  trim(mb_strtolower($_REQUEST['correo']));
         $out = new select();
         if ($out->compr_user($email)==0) {
+
             $nombre = trim($_REQUEST['nombre']);
             $apellido = trim($_REQUEST['apellido']);
-            $pass = trim($_REQUEST['pass']);
+            $pass = substr(md5(microtime()), 1, 8);
             $tipo = trim(mb_strtolower($_REQUEST['tipo']));
-
+            echo $pass;
             $in = new insertar();
             $in->in_user($nombre, $apellido, $email, $pass, $tipo);
             $mail = new mail();
@@ -79,7 +80,7 @@ if($_SESSION['tipo'] == 'admin'){
                     <div class="col-md-3"></div>
                 </div>
             <?php endif; ?>
-            <form action="" onsubmit="return validar()">
+            <form action="" >
                 <div class="form-group">
                     <label >Nombre:</label>
                     <input  type="text" class="form-control" required  name="nombre" minlength="1">
@@ -94,10 +95,7 @@ if($_SESSION['tipo'] == 'admin'){
                             <option>admin</option>
                         </select>
                     </div>
-                    <label >Contraseña:</label>
-                    <input  type="password" class="form-control" required  name="pass" id="pass1" minlength="4">
-                    <label >Repetir contraseña:</label>
-                    <input  type="password" class="form-control" required  name="pass2" id="pass2" minlength="4">
+                    <label >Contraseña se genera y envia a su Email</label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
             </form>

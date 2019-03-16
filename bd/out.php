@@ -235,6 +235,24 @@ class select{
 
     }
 
+    function all_dato_user(){
+        include "ce/cer.php";
+
+        $sql ="select correo, tipo, nombre, apellido from user ";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+
+    }
+
 
 
 

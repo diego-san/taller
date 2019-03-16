@@ -1,8 +1,11 @@
 
 <?php
-$esperado   =  password_hash('1234', PASSWORD_BCRYPT, array("cost" => 10));
+$newstring = 'abcdef@abcdef';
+$pos = strpos($newstring, '@');
 
 
 
+$onlyconsonants = str_replace( "@", 'H',"diego@gsds.com");
 
-echo password_verify('1234', '$2y$10$HqhKabMiBPG2yY0HyrvZMOEy0v861/noX/hZQHHuKq4cztH95Bine');
+echo $onlyconsonants;
+?>

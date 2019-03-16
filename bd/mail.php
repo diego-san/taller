@@ -10,9 +10,10 @@ class mail {
 </head> 
 <body> 
 <h1>Hola '.$nombre.' '.$apellido.'</h1> 
-<p>Correo:'.$correo.' </p> 
-<p>Cotraseña:'.$pass.' </p> 
+<p>CUsuario: '.$correo.' </p> 
+<p>Cotraseña: '.$pass.' </p> 
 <p>Recuerda cambiar tu contraseña</p> 
+<img src="/img/logo.png" alt="" width="250" height="200">
 </body> 
 </html> 
 ';
