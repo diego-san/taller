@@ -9,7 +9,9 @@ header("Content-Type: text/html;charset=utf-8");
 if(isset($_GET['f'])){
     $folio=$_GET['f'];
     if(strlen($folio) >= 10){
-    header("Location:modifica.php?e=1");
+        $link = "modifica.php?e=1";
+        echo "<script> location.href='".$link."';</script>";
+        die();
     }
     $out = new select();
     $datos = $out->datos_informe($folio);
@@ -18,7 +20,9 @@ if(isset($_GET['f'])){
 
     }
 }else{
-    header("Location:modifica.php");
+    $link = "modifica.php";
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 
@@ -47,15 +51,21 @@ if (isset($_REQUEST['patente'])) {
 
         $up = new update();
         $up->mo_informe($folio, $patente, $email, $FECHA_RECEPCIoN, $HORA_RECEPCIoN, $KILOMETRAJE, $PRoXIMA_MANTENCIoN, $FECHA_ENTREGA, $HORA_ENTREGA, $DIAGNoSTICO, $DETALLE, $nota);
-            header("Location:modifica.php?e=3");
+            $link = "modifica.php?e=3";
+            echo "<script> location.href='".$link."';</script>";
+            die();
     }else{
-            header("Location:modifica.php?e=2");
+            $link = "modifica.php?e=2";
+            echo "<script> location.href='".$link."';</script>";
+            die();
 
         }
 
     } else {
 
-        header("Location:modifica.php?e=1");
+        $link = "modifica.php?e=1";
+        echo "<script> location.href='".$link."';</script>";
+        die();
 
 
     }

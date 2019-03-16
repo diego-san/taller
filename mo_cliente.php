@@ -12,17 +12,24 @@ if(isset($_GET['c'])){
         $out = new select();
         $datos = $out->datos_cliente($correo);
         if ($out->datos_cliente($correo)== 0){
-            header("Location:modifica.php?e=4");
+            $link = "modifica.php?e=4";
+            echo "<script> location.href='".$link."';</script>";
+            die();
 
         }
 
     }else{
-        header("Location:inicio.php");
+        $link = "inicio.php";
+        echo "<script> location.href='".$link."';</script>";
+        die();
 
     }
 
 }else{
     header("Location:modifica.php");
+    $link = "modifica.php";
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 
@@ -41,12 +48,17 @@ if (isset($_REQUEST['nombre'])) {
             $modi->new_correo_info($correo,$datos[0]['correo']);
             $modi->new_correo_auto($correo,$datos[0]['correo']);
             $modi->mo_cliente_correo($nombre,$apellido,$tele,$correo,$datos[0]['correo']);
-            header("Location:modifica.php?e=3");
+            $link = "modifica.php?e=3";
+            echo "<script> location.href='".$link."';</script>";
+            die();
+
 
 
         }else{
             $modi->mo_cliente($nombre,$apellido,$tele,$correo);
-            header("Location:modifica.php?e=3");
+            $link = "modifica.php?e=3";
+            echo "<script> location.href='".$link."';</script>";
+            die();
 
         }
 

@@ -28,7 +28,9 @@ if($_SESSION['tipo'] == 'admin'){
     }
 
 }else{
-    header("Location:inicio.php");
+    $link = "inicio.php";
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 

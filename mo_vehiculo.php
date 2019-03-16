@@ -8,17 +8,23 @@ if(isset($_GET['p'])){
     $patente=$_GET['p'];
 
     if(strlen($patente )>6){
-        header("Location:inicio.php");
+        $link = "inicio.php";
+        echo "<script> location.href='".$link."';</script>";
+        die();
     }
     $out = new select();
     $dato = $out->datos_auto($patente);
     if ($out->datos_auto($patente)== 0){
-        header("Location:modifica.php?e=2");
+        $link = "modifica.php?e=2";
+        echo "<script> location.href='".$link."';</script>";
+        die();
 
     }
 
 }else{
-    header("Location:modifica.php");
+    $link = "modifica.php";
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 if(isset($_REQUEST['patente'])) {
@@ -38,21 +44,30 @@ if(isset($_REQUEST['patente'])) {
 
             if ($dato[0]['patente'] == $patente) {
 
-            $modi->mo_auto($patente, $correo, $marca, $modelo, $cili, $ano);
-            header("Location:modifica.php?e=3");
+                $modi->mo_auto($patente, $correo, $marca, $modelo, $cili, $ano);
+
+                $link = "modifica.php?e=3";
+                echo "<script> location.href='".$link."';</script>";
+                die();
             }else{
 
                 $modi->new_patente_info($patente,$dato[0]['patente']);
                 $modi->mo_auto_new($patente, $correo, $marca, $modelo, $cili, $ano,$dato[0]['patente']);
-                header("Location:modifica.php?e=3");
+                $link = "modifica.php?e=3";
+                echo "<script> location.href='".$link."';</script>";
+                die();
 
             }
         }else{
-            header("Location:modifica.php?e=4");
+            $link = "modifica.php?e=4";
+            echo "<script> location.href='".$link."';</script>";
+            die();
         }
     }else{
 
-        header("Location:modifica.php?e=2");
+        $link = "modifica.php?e=2";
+        echo "<script> location.href='".$link."';</script>";
+        die();
     }
 }
 

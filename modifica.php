@@ -7,18 +7,21 @@ if(isset($_GET['e'])){
 }
 
 if (isset($_REQUEST['id'])){
-
-    header("Location:mo_informe.php?f=".trim(mb_strtoupper($_REQUEST['id'])));
+    $link = "mo_informe.php?f=".trim(mb_strtoupper($_REQUEST['id']));
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 if (isset($_REQUEST['patente'])){
-
-    header("Location:mo_vehiculo.php?p=".trim(mb_strtoupper($_REQUEST['patente'])));
+    $link = "mo_vehiculo.php?p=".trim(mb_strtoupper($_REQUEST['patente']));
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 if (isset($_REQUEST['correo'])){
-
-    header("Location:mo_cliente.php?c=".trim(mb_strtolower($_REQUEST['correo'])));
+    $link = "mo_cliente.php?c=".trim(mb_strtolower($_REQUEST['correo']));
+    echo "<script> location.href='".$link."';</script>";
+    die();
 }
 
 
