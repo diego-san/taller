@@ -9,9 +9,9 @@ if (isset($_REQUEST['pass'])){
         $up = new update();
         $up->cambiar_pass($varsesion,trim($_REQUEST['pass']));
 
-        $link = "inicio.php?e=1";
-        echo "<script> location.href='".$link."';</script>";
-        die();
+        session_start();
+        session_destroy();
+        header("Location:index.php");
 
 
     }else{

@@ -15,7 +15,7 @@ if($_SESSION['tipo'] == 'admin'){
             $apellido = trim($_REQUEST['apellido']);
             $pass = substr(md5(microtime()), 1, 8);
             $tipo = trim(mb_strtolower($_REQUEST['tipo']));
-            
+
             $in = new insertar();
             $in->in_user($nombre, $apellido, $email, $pass, $tipo);
             $mail = new mail();

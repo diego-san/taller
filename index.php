@@ -19,7 +19,7 @@ if ($dato != 0){
         echo $_SESSIONS['user'];
         header("Location:inicio.php");
     }else{
-        echo "no";
+        $error = 1;
 
     }
 
@@ -57,7 +57,8 @@ if ($dato != 0){
 </head>
 <body class="text-center">
 <form class="form-signin">
-    <img class="mb-4" src="img/logo.png" alt="" width="250" height="175">
+
+    <img class="mb-4" src="img/logo.png" alt="" width="250" height="175" >
     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
     <label for="inputEmail" class="sr-only">Email</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus name="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
@@ -69,8 +70,19 @@ if ($dato != 0){
         </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    <?php if($error == 1) : ?>
+
+                <div class="alert alert-danger btn-block" role="alert" >
+                    Email o Contraseña Erronea
+                </div>
+
+
+    <?php endif; ?>
+
     <p class="mt-5 mb-3 text-muted">&copy; <?php echo date('Y');
                                 ?></p>
+
+
 </form>
 
 
