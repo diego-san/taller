@@ -45,7 +45,7 @@ if (isset($_REQUEST['correo'])){
     <div class="container-fluid fondo">
         <div class="row">
             <div class="col-md-12 mt-4">
-                <h1 class="text-center bg-dark text-white mb-3 card-header ">Modificarr datos</h1>
+                <h1 class="text-center bg-dark text-white mb-3 card-header ">Modificar datos</h1>
             </div>
         </div>
 

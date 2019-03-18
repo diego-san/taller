@@ -46,7 +46,7 @@ if (isset($_REQUEST['buscar'])){
     }elseif (filter_var($buscar, FILTER_VALIDATE_EMAIL)){
 
         $valida = $out->busca_auto_correo($buscar);
-        echo 'antes co';
+
         if ($valida == 0){
             $error = 3;
 

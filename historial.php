@@ -1,6 +1,12 @@
 <?php
 include "nav.php";
 require_once "bd/out.php";
+function multiexplode ($delimiters,$string) {
+
+    $ready = str_replace($delimiters, $delimiters[0], $string);
+    $launch = explode($delimiters[0], $ready);
+    return  $launch;
+}
 
 if (isset($_GET['p'])){
     $patente = $_GET['p'];
@@ -103,7 +109,18 @@ if (isset($_GET['p'])){
                                 <div class="card">
                                     <h5 class="card-header text-white bg-secondary">Detalle</h5>
                                     <div class="card-body">
-                                        <p class="card-text"><?php echo $value['DETALLE'];?></p>
+                                        <ul class="list-group list-group-flush">
+                                        <?php $detalle = $value['DETALLE'];
+                                        $rest = substr($detalle, 2);
+                                        $porciones = multiexplode(array("1)","2)","3)","4)","5)","6)","7)","8)","9)","10)","11)","12)","13)","14)","15)"),$rest);
+                                        for ($i=0; $i < count($porciones);$i++){
+                                            $no = $i +1;
+                                            echo "<li class=\"list-group-item\">".$no.') '.$porciones[$i]."</li>";
+
+                                        }
+
+                                        ?>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

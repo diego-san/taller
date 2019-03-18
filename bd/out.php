@@ -251,6 +251,46 @@ class select{
             return $resultado;
         }
 
+
+
+    }
+
+    function all_infor(){
+        include "ce/cer.php";
+
+        $sql ="select id , email, patente from informe ";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+
+    }
+
+    function total_informe_ano(){
+        include "ce/cer.php";
+        $date = date('Y').'-01-01';
+        $date2 = date('Y').'-12-31';
+
+        $sql ="SELECT COUNT(id) FROM informe where (FECHA_RECEPCIoN) BETWEEN '$date' AND '$date2' ";
+        $smt=$conn->prepare($sql);
+        $smt->execute();
+        $resultado= $smt->fetchall();
+        $conn=null;
+
+        if (empty($resultado)){
+            return 0;
+
+        }else {
+            return $resultado;
+        }
+
     }
 
 

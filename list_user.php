@@ -57,7 +57,7 @@ if($_SESSION['tipo'] == 'admin'){
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $value['nombre'].' '.$value['apellido'];?></h5>
                         <p class="card-text">Tipo: <?php echo $value['tipo'];?></p>
-                        <a href="#" class="btn btn-primary">Modificar</a>
+
                         <a type="button" class="btn btn-danger" data-toggle="modal" href="#<?php echo str_replace( ['@','.'], 'H',$value['correo']);?>" >
                             Eliminar
                         </a>

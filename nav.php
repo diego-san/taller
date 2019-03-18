@@ -36,7 +36,7 @@ $menu1 = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 </div>
             </li>
             <li class="nav-item active">
-                <a class="nav-link active" href="modifica.php">Eliminar</a>
+                <a class="nav-link active" href="dele.php">Eliminar</a>
             </li>
             <li class="nav-item dropdown active ">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -121,7 +121,7 @@ $menu2 = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 </nav>';
 
 $footer = "<div class=\"footer\">
-        <h5 class='text-center text-white p-4'>sistema de taller version 0.6</h5>
+        <h5 class='text-center text-white p-4'>sistema de taller version 0.8 beta</h5>
 </div>";
 
 session_start();
