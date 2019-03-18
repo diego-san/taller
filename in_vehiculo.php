@@ -10,7 +10,7 @@ if (isset($_REQUEST['patente'])) {
     $out = new select();
 
     if($correo== $out->compru_clinete($correo)[0][0]) {
-        $patente = trim(mb_strtolower($_REQUEST['patente']));
+        $patente = trim(mb_strtoupper($_REQUEST['patente']));
         if ($patente!= $out->compru_auto($patente)[0][0]) {
             $marca = trim($_REQUEST['marca']);
             $modelo = trim($_REQUEST['modelo']);

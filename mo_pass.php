@@ -51,7 +51,7 @@ if (isset($_REQUEST['pass'])){
                     <label >Repetir contraseña:</label>
                     <input  type="password" class="form-control" required  name="pass2" id="pass2" minlength="4">
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Cambiar</button>
             </form>
         </div>
         <div class="col-md-3"></div>
